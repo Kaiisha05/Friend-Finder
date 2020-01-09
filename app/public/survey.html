@@ -172,6 +172,23 @@
         </div>
       </div>
     </div> -->
-</body>
 
+    <button type="submit" id="findFriend">SUBMIT</button>
+
+<script type="text/javascript">
+$("#findFriend").on("click", function(event) {
+  event.preventDefault();
+  var newFriend = {
+    name: $("#name").val().trim(),
+    photo: $("#photo").val().trim()
+  };
+  $.post("/api/friends", newFriend)
+  .then(function(data) {
+    console.log("survey.html", data);
+    alert("Adding new friend!")
+  });
+});
+</script>
+  </body>
+  <footer> <p><a href="/api/friendsData" target="_blank">API Friends List</a> | <a href="https://kaiisha05.github.io/Friend-Finder/" target="_blank">GitHub Repo</a></p></footer>
 </html>
