@@ -24,13 +24,14 @@
   <br>
   <div class="container">
     <div id="generalInfo">
-      <input class="form-control" type="text" placeholder="Full Name" id="name" requried>
-      <input class="form-control" type="text" placeholder="Link to Your Image" id="photo" required>
+      <input class="form-control col-10" type="text" placeholder="Full Name" id="name" requried>
+      <br>
+      <input class="form-control col-10" type="text" placeholder="Link to Your Image" id="photo" required>
     </div>
     <br>
-    <div id="questions">
+    <!-- <div id="questions"> -->
       <!-- <h3>Question #1</h3> -->
-      <h4>Question #1:The most relaxing place to be is a tropical island.</h4>
+      <!-- <h4>1.) The most relaxing place to be is a tropical island.</h4>
       <div class="form-row align-items-center">
         <div class="col-auto my-1">
           <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
@@ -43,118 +44,134 @@
             <option value="3">5 (Strongly Agree)</option>
           </select>
         </div>
-        <!-- <div class="form-group">
-          <label for="exampleFormControlSelect1"></label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Choose Below</option>
-            <option>1 (Strongly Disagree)</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 (Strongly Agree)</option>
-          </select> -->
-          <!-- <h3>Question #2</h3>
-          <h4></h4>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Select an Option</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5(Strongly Agree)</option>
-            </select>
-            <h3>Question #3</h3>
-            <h4></h4>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Select an Option</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1 (Strongly Disagree)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(Strongly Agree)</option>
-              </select>
-              <h3>Question #4</h3>
-              <h4></h4>
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Select an Option</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>1 (Strongly Disagree)</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5(Strongly Agree)</option>
-                </select>
-                <h3>Question #5</h3>
-                <h4></h4>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Select an Option</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5(Strongly Agree)</option>
-                  </select>
-                  <h3>Question #6</h3>
-                  <h4></h4>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Select an Option</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>1 (Strongly Disagree)</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5(Strongly Agree)</option>
-                    </select>
-                    <h3>Question #7</h3>
-                    <h4></h4>
-                    <div class="form-group">
-                      <label for="exampleFormControlSelect1">Select an Option</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1 (Strongly Disagree)</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5(Strongly Agree)</option>
-                      </select>
-                      <h3>Question #8</h3>
-                      <h4></h4>
-                      <div class="form-group">
-                        <label for="exampleFormControlSelect1">Select an Option</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>1 (Strongly Disagree)</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5(Strongly Agree)</option>
-                        </select>
-                        <h3>Question #9</h3>
-                        <h4></h4>
-                        <div class="form-group">
-                          <label for="exampleFormControlSelect1">Select an Option</label>
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1 (Strongly Disagree)</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5(Strongly Agree)</option>
-                          </select>
-                          <h3>Question #10</h3>
-                          <h4></h4>
-                          <div class="form-group">
-                            <label for="exampleFormControlSelect1">Select an Option</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                              <option>1 (Strongly Disagree)</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5(Strongly Agree)</option>
-                            </select>
-                          </div> -->
-                        </div>
-                      </div>
+      </div>
+      <h4>2 .) The most relaxing place to be is a tropical island.</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Select an Option</option>
+            <option value="1">1 (Stronly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <h4>3.) The most relaxing place to be is a tropical island.</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Select an Option</option>
+            <option value="1">1 (Stronly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <h4>4.) The most relaxing place to be is a tropical island.</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Select an Option</option>
+            <option value="1">1 (Stronly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <h4>5.) The most relaxing place to be is a tropical island.</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Select an Option</option>
+            <option value="1">1 (Stronly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <h4>6.) The most relaxing place to be is a tropical island.</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Select an Option</option>
+            <option value="1">1 (Stronly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <h4>7.) The most relaxing place to be is a tropical island.</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Select an Option</option>
+            <option value="1">1 (Stronly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <h4>8.) The most relaxing place to be is a tropical island.</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Select an Option</option>
+            <option value="1">1 (Stronly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <h4>9.) The most relaxing place to be is a tropical island.</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Select an Option</option>
+            <option value="1">1 (Stronly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+      <h4>10.) The most relaxing place to be is a tropical island.</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Select an Option</option>
+            <option value="1">1 (Stronly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5 (Strongly Agree)</option>
+          </select>
+        </div>
+      </div>
+    </div> -->
 </body>
 
 </html>

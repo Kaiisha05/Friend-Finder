@@ -1,39 +1,63 @@
-// ==============================================================================
-// DEPENDENCIES
-// Series of npm packages that we will use to give our server useful functionality
-// ==============================================================================
+// DEPENDENCIES 
+// ======================================================
 
 var express = require("express");
+var path = require("path"); 
+//using a separate routes file
 
-// ==============================================================================
-// EXPRESS CONFIGURATION
-// This sets up the basic properties for our express server
-// ==============================================================================
-
-// Tells node that we are creating an "express" server
+// Sets up the Express App 
+// ======================================================
 var app = express();
-
-// Sets an initial port. We"ll use this later in our listener
 var PORT = process.env.PORT || 8080;
+
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// ================================================================================
-// ROUTER
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-// ================================================================================
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
 
-// =============================================================================
+// ROUTES - moved to htmlRoutes file
+// ======================================================
+
+// app.get("/", function (req, res) {
+//   res.sendFile(path.join(__dirname, "home.html"));
+// });
+//  app.get("/survey", function (req,res) {
+//    res.sendFile(path.join(__dirname, "survey.html"));
+//  });
+
+
+// Display all Friends - moved to apiRoutes
+// ======================================================
+// app.get("/api/friends", function (req,res) {
+//   return res.json(friends);
+// });
+
+// // Display matched friend -- will hanlde the compatibiilty logic
+// app.post("api/friends", function (req, res) {
+//   var newFriend = req.body;
+
+// // Using a RegEx Pattern to remove spaces from newCharacter
+//   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+
+//   console.log(newFriend);
+
+//   friends.push(newFriend);
+  
+//   res.json(newFriend);
+// });
+
+
+// ROUTER - The below points our server to a series of "route" files. These routes give our server a "map" of how to respond when users visit or request data from various URLs.
+// =====================================================
+require("./app/routes/htmlRoutes")(app);
+
+
 // LISTENER
 // The below code effectively "starts" our server
-// =============================================================================
-
+// ======================================================
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
+
