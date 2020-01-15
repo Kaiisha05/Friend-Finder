@@ -6,32 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Survey</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+<!-- Latest compiled and minified CSS & JS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <h1>Survey Questions</h1>
-  <br>
   <div class="container">
-    <div id="generalInfo">
-      <input class="form-control col-10" type="text" placeholder="Full Name" id="name" requried>
-      <br>
-      <input class="form-control col-10" type="text" placeholder="Link to Your Image" id="photo" required>
-    </div>
-    <br>
-    <!-- <div id="questions"> -->
-      <!-- <h3>Question #1</h3> -->
-      <!-- <h4>1.) The most relaxing place to be is a tropical island.</h4>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <!--Survey-->
+        <div class="card">
+          <div class="card-header">
+            Survey Questions
+          </div>
+          <div class="card-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="your-name">Full Name</label>
+                <input type="text" class="form-control" id="your-name" required>
+              </div>
+              <div class="form-group">
+                <label for="your-image">Link to Your Image</label>
+                <input type="text" class="form-control" id="your-image" requried>
+              </div>
+
+              <!-- <div id="questions"> -->
+              <!-- <h3>Question #1</h3> -->
+              <!-- <h4>1.) The most relaxing place to be is a tropical island.</h4>
       <div class="form-row align-items-center">
         <div class="col-auto my-1">
           <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
@@ -173,22 +178,57 @@
       </div>
     </div> -->
 
-    <button type="submit" id="findFriend">SUBMIT</button>
+              <button type="submit" class="submit">SUBMIT</button>
+            </form>
 
-<script type="text/javascript">
-$("#findFriend").on("click", function(event) {
-  event.preventDefault();
-  var newFriend = {
-    name: $("#name").val().trim(),
-    photo: $("#photo").val().trim()
-  };
-  $.post("/api/friends", newFriend)
-  .then(function(data) {
-    console.log("survey.html", data);
-    alert("Adding new friend!")
-  });
-});
-</script>
-  </body>
-  <footer> <p><a href="/api/friendsData" target="_blank">API Friends List</a> | <a href="https://kaiisha05.github.io/Friend-Finder/" target="_blank">GitHub Repo</a></p></footer>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/friends" target="_blank">API Friends List</a> | <a
+            href="https://kaiisha05.github.io/Friend-Finder/" target="_blank">GitHub Repo</a></p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
 </html>
+
+<!--Handles how form data is sent to our server-->
+<script type="text/javascript">
+
+  $(".submit").on("click", function (event) {
+    event.preventDefault();
+
+// grabs the form elements
+    var newFriend = {
+      yourName: $("#your-name").val().trim(),
+      yourPhoto: $("#your-image").val().trim()
+    };
+
+    console.log("console #1:", newFriend);
+
+    $.post("/api/friends", newFriend,
+     function (data) {
+        console.log("survey.html", data);
+        if(data) {
+        alert("Adding new friend!")
+      }
+      else {
+        alert("You must complete the entire questionnaire!");
+      }
+
+    // Clear the form when submitting
+    $("#your-name").val("");
+    $("#your-image").val("");
+    });
+
+});
+
+</script>

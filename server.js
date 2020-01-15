@@ -2,7 +2,7 @@
 // ======================================================
 
 var express = require("express");
-var path = require("path"); 
+// var path = require("path"); 
 //using a separate routes file
 
 // Sets up the Express App 
