@@ -3,3 +3,4 @@ body {
     background: linear-gradient(0, hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8)),
       url('https://source.unsplash.com/random/?friends') no-repeat scroll center
         center / cover;
+}

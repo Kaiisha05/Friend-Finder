@@ -12,16 +12,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="app/public/styles.css">
+  <!-- <link rel="stylesheet" href="app/public/styles.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
     integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 </head>
 
 <body>
+  <!--SURVEY-->
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <!--Survey-->
         <div class="card">
           <div class="card-header">
             Survey Questions
@@ -36,7 +36,7 @@
                 <label for="your-image">Link to Your Image (Required)</label>
                 <input type="text" class="form-control" id="your-image" required>
               </div>
-<!-- SURVEY QUESTIONS -->
+              <!-- SURVEY QUESTIONS -->
               <div id="questions">
                 <div class="form-group">
                   <h4>Question #1</h4>
@@ -177,51 +177,105 @@
   </footer>
 
   </div>
+
+  <!-- Modal with Friend Result -->
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">You've Been Matched!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="match-friend-name"></p>
+          <img id="match-friend-image" class="img-fluid" max-height="400" max-width="400" src="" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!--Handles how form data is sent to our server-->
+  <script type="text/javascript">
+
+    $(".submit").on("click", function (event) {
+      event.preventDefault();
+
+
+      // FORM VALIDATION
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function () {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        $(".selection").each(function () {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
+      }
+
+      // All Required Fields Completed
+      if (validateForm()) {
+
+        // grabs the form elements
+        var newFriend = {
+          yourName: $("#your-name").val().trim(),
+          yourPhoto: $("#your-image").val().trim(),
+          scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val(),
+          ]};
+
+        // POST to Freinds API
+        $.post("/api/friends", newFriend,
+          function (data) {
+            // console.log("survey.html", data);
+            // if (data) {
+            //   alert("Adding new friend!")
+
+            // Post Match & Display within Modal
+            $("your-name").text(data.yourName);
+            $("your-image").attr("src", data.yourPhoto);
+            $(".modal").modal("toggle");
+          });
+
+      } else {
+
+        alert("You must complete the entire questionnaire!");
+      
+
+      // Clear the form when submitting
+      $("#your-name").val("");
+      $("#your-image").val("");
+      $("#questions").val("");
+    }
+    });
+
+
+
+
+  </script>
+
 </body>
 
 </html>
-
-<!--Handles how form data is sent to our server-->
-<script type="text/javascript">
-
-  $(".submit").on("click", function (event) {
-    event.preventDefault();
-
-    // grabs the form elements
-    var newFriend = {
-      yourName: $("#your-name").val().trim(),
-      yourPhoto: $("#your-image").val().trim(),
-      scores: [
-        $("#q1").val(),
-        $("#q2").val(),
-        $("#q3").val(),
-        $("#q4").val(),
-        $("#q5").val(),
-        $("#q6").val(),
-        $("#q7").val(),
-        $("#q8").val(),
-        $("#q9").val(),
-        $("#q10").val(),
-      ]
-    };
-
-
-    $.post("/api/friends", newFriend,
-      function (data) {
-        console.log("survey.html", data);
-        if (data) {
-          alert("Adding new friend!")
-        }
-        else {
-          alert("You must complete the entire questionnaire!");
-        }
-
-        // Clear the form when submitting
-        $("#your-name").val("");
-        $("#your-image").val("");
-        $("#questions").val("");
-      });
-
-  });
-
-</script>
