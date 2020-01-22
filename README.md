@@ -1,9 +1,9 @@
 # Friend-Finder
 
-#How to Use
+# How to Use
 User will click the button to start the survey. Upon completing all the fields and clicking "submit" the user will be "matched" with a friend.
 
-#Behind the Scenes 
+# Behind the Scenes 
 Home page provide a brief description and has a button that will take the user to the Questionnaire.
 
 The Questionnaire will require the User to input their name and a link to an image. Below are 10 questions for them to answer. All fields must be completed and all questions answered before results will render.
@@ -17,7 +17,7 @@ When a "friend" whose total difference between that and the User is the lowest t
 The Questionnaire is reset and ready for the next entry.
 
 
-#Technologies Used
+# Technologies Used
 * JavaScript
 * JQuery
 * Nodejs
