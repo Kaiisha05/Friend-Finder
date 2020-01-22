@@ -8,14 +8,14 @@
   <title>Survey</title>
 
   <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
-      integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
-  
+    integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 </head>
 
 <body>
@@ -190,8 +190,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <p id="match-friend-name"></p>
-          <img id="match-friend-image" class="img-fluid" max-height="400" max-width="400" src="" alt="">
+          <p id="match-name"></p>
+          <img id="match-image" class="img-fluid" max-height="400" max-width="400" src="" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -207,11 +207,11 @@
   <!--Handles how form data is sent to our server-->
   <script type="text/javascript">
     var formClear = document.getElementById("#myForm");
-    
+
 
     $(".submit").on("click", function (event) {
       event.preventDefault();
-      
+
 
 
       // FORM VALIDATION
@@ -259,16 +259,11 @@
         $.post("/api/friends", newFriend,
           function (data) {
             console.log(newFriend);
-            
-            console.log("survey.html", data);
-            // if (data) {
-            //   alert("Adding new friend!")
 
-            // Post Match & Display within Modal
-            $("#match-friend-name").text(data.yourName);
-            $("#match-friend-image").attr("src", data.yourPhoto);
+            $("#match-name").text(data.yourName);
+            $("#match-image").attr("src", data.yourPhoto);
             $(".modal").modal("toggle");
-          }); 
+          });
       } else {
 
         alert("You must complete the entire questionnaire!");
