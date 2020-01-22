@@ -37,7 +37,7 @@ var totalDifference;
 for (var i = 0; i < friendsData.length; i++) {
   var currentFriends = friendsData[i];
   totalDifference = 0;
-console.log("currentUser: ", currentFriends.name);
+// console.log("currentUser: ", currentFriends.name);
 
 //Iterate through all the scores of the existing friends. 
 for (var f = 0; f < currentFriends.scores.length; f++) {
@@ -57,7 +57,6 @@ totalDifference += Math.abs(parseInt(currentnewFriendScore) - parseInt(currentFr
 
 };
 
-// console.log("console #2:" ,newFriend);
 
     friendsData.push(newFriend);
 
@@ -65,6 +64,4 @@ totalDifference += Math.abs(parseInt(currentnewFriendScore) - parseInt(currentFr
   });
 
 };
-//friends = friendsData
-//userData = newFriend
-//friendDifference = difference
+
