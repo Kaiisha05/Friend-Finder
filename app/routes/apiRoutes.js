@@ -1,6 +1,6 @@
 //Load Data
 // ======================================================
-var friendsData = require("./../data/friendsData")
+var friendsData = require("../data/friendsData")
 // linking routes to a series of "data" sources. These data sources hold arrays of information of all possible friends
 
 
