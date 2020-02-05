@@ -16,7 +16,14 @@ When a "friend" whose total difference between that and the User is the lowest t
 
 The Questionnaire is reset and ready for the next entry.
 
+# Screenshots
+<img src="images/homepage_screenshot.png" style="width '100%'">
 
+<img src="images/questionnaire_screenshot.png" style="width '100%'">
+
+<img src="images/results_screenshot.png" style="width '100%'">
+
+<img src="images/error_screenshot.png" style="width '100%'">
 # Technologies Used
 * JavaScript
 * JQuery
