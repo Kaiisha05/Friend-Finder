@@ -29,6 +29,7 @@ The Questionnaire is reset and ready for the next entry.
 
 * All Form Fields Required
 <img src="images/error_screenshot.png" style="width '100%'">
+
 # Technologies Used
 * JavaScript
 * JQuery
